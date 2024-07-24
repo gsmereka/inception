@@ -11,19 +11,19 @@ makedir:
 	@sudo mkdir -p $(DB_DATA)
 
 up: build
-	sudo docker-compose -f srcs/docker-compose.yml up -d
+	sudo docker compose -f srcs/docker-compose.yml up -d
 
 down:
-	sudo docker-compose -f srcs/docker-compose.yml down
+	sudo docker compose -f srcs/docker-compose.yml down
 
 stop:
-	sudo docker-compose -f srcs/docker-compose.yml stop
+	sudo docker compose -f srcs/docker-compose.yml stop
 
 start:
-	sudo docker-compose -f srcs/docker-compose.yml start
+	sudo docker compose -f srcs/docker-compose.yml start
 
 build:
-	sudo docker-compose -f srcs/docker-compose.yml build
+	sudo docker compose -f srcs/docker-compose.yml build
 
 clean:
 	@sudo docker ps -qa | xargs -r sudo docker stop || true
